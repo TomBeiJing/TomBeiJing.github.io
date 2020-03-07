@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="jQuery," />
 
 
 
@@ -79,13 +79,16 @@
 
 
 
-<meta name="description" content="TomBeiJing的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TomBeiJing的博客">
-<meta property="og:url" content="http://yoursite.com/categories/%E5%85%B6%E4%BB%96/index.html">
+<meta name="description" content="新版本JQuery中一些方法淘汰后的替代方法 .live() 1.9以上被淘汰。 替代函数：.on()。 .die() 1.9以上被淘汰。 替代函数：.off()。 .size() 1.8以上被淘汰。替代函数：.length。 .toggle() 1.8以上被淘汰。对于toggle，一般都会用if进行替换。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LearnjQuery01-锋利的jQuery">
+<meta property="og:url" content="http://yoursite.com/2020/03/07/LearnjQuery01/index.html">
 <meta property="og:site_name" content="TomBeiJing的博客">
-<meta property="og:description" content="TomBeiJing的博客">
+<meta property="og:description" content="新版本JQuery中一些方法淘汰后的替代方法 .live() 1.9以上被淘汰。 替代函数：.on()。 .die() 1.9以上被淘汰。 替代函数：.off()。 .size() 1.8以上被淘汰。替代函数：.length。 .toggle() 1.8以上被淘汰。对于toggle，一般都会用if进行替换。">
+<meta property="article:published_time" content="2020-03-07T13:46:04.000Z">
+<meta property="article:modified_time" content="2020-03-07T14:00:38.331Z">
 <meta property="article:author" content="TomBeiJing">
+<meta property="article:tag" content="jQuery">
 <meta name="twitter:card" content="summary">
 
 
@@ -116,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/其他/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/03/07/LearnjQuery01/"/>
 
 
 
 
 
-  <title>分类: 其他 | TomBeiJing的博客</title>
+  <title>LearnjQuery01-锋利的jQuery | TomBeiJing的博客</title>
   
 
 
@@ -141,7 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -235,55 +238,174 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>其他<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/07/LearnjQuery01/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TomBeiJing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TomBeiJing的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2020/03/07/text3/" itemprop="url">
-              
-                <span itemprop="name">网址导航</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">LearnjQuery01-锋利的jQuery</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-03-07T17:02:33+08:00"
-              content="2020-03-07" >
-          03-07
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-07T21:46:04+08:00">
+                2020-03-07
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/jQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">jQuery</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="新版本JQuery中一些方法淘汰后的替代方法"><a href="#新版本JQuery中一些方法淘汰后的替代方法" class="headerlink" title="新版本JQuery中一些方法淘汰后的替代方法"></a>新版本JQuery中一些方法淘汰后的替代方法</h4><ol>
+<li>.live() 1.9以上被淘汰。 替代函数：.on()。</li>
+<li>.die() 1.9以上被淘汰。 替代函数：.off()。</li>
+<li>.size() 1.8以上被淘汰。替代函数：.length。</li>
+<li>.toggle() 1.8以上被淘汰。对于toggle，一般都会用if进行替换。 </li>
+</ol>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jQuery/" rel="tag"># jQuery</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/07/text3/" rel="next" title="网址导航">
+                <i class="fa fa-chevron-left"></i> 网址导航
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -291,6 +413,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -311,8 +437,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -372,6 +507,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#新版本JQuery中一些方法淘汰后的替代方法"><span class="nav-number">1.</span> <span class="nav-text">新版本JQuery中一些方法淘汰后的替代方法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -512,6 +663,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
