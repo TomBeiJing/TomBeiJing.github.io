@@ -56,10 +56,10 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.4">
 
 
   <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="hexo," />
 
 
 
@@ -79,15 +79,16 @@
 
 
 
-<meta name="description" content="TomBeiJing的博客">
+<meta name="description" content="问题1 路径中出现&#x2F;%20&#x2F;  从而导致访问不到文件 经过一通搜索，知道%20 是空格的意思，把配置文件里 ||之前所有的空格删掉即可。  原来是这个样子： 123456789menu:  home: &#x2F; ||home  #about: &#x2F;about&#x2F; || user  #tags: &#x2F;tags&#x2F; ||tags  #categories: &amp;#x2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="text2">
+<meta property="og:title" content="Hexo-Next主题使用中遇到的一些问题">
 <meta property="og:url" content="http://yoursite.com/2020/03/07/text2/index.html">
 <meta property="og:site_name" content="TomBeiJing的博客">
-<meta property="og:description" content="TomBeiJing的博客">
+<meta property="og:description" content="问题1 路径中出现&#x2F;%20&#x2F;  从而导致访问不到文件 经过一通搜索，知道%20 是空格的意思，把配置文件里 ||之前所有的空格删掉即可。  原来是这个样子： 123456789menu:  home: &#x2F; ||home  #about: &#x2F;about&#x2F; || user  #tags: &#x2F;tags&#x2F; ||tags  #categories: &amp;#x2">
 <meta property="article:published_time" content="2020-03-07T05:55:14.000Z">
-<meta property="article:modified_time" content="2020-03-07T05:55:14.063Z">
+<meta property="article:modified_time" content="2020-03-07T13:06:01.481Z">
 <meta property="article:author" content="TomBeiJing">
+<meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
 
 
@@ -124,7 +125,7 @@
 
 
 
-  <title>text2 | TomBeiJing的博客</title>
+  <title>Hexo-Next主题使用中遇到的一些问题 | TomBeiJing的博客</title>
   
 
 
@@ -180,7 +181,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -189,8 +190,28 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -248,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">text2</h1>
+          <h1 class="post-title" itemprop="name headline">Hexo-Next主题使用中遇到的一些问题</h1>
         
 
         <div class="post-meta">
@@ -270,6 +291,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -298,7 +341,38 @@
       
 
       
-        
+        <h3 id="问题1-路径中出现-20-从而导致访问不到文件"><a href="#问题1-路径中出现-20-从而导致访问不到文件" class="headerlink" title="问题1 路径中出现/%20/  从而导致访问不到文件"></a>问题1 路径中出现/%20/  从而导致访问不到文件</h3><p> 经过一通搜索，知道%20 是空格的意思，把配置文件里 ||之前所有的空格删掉即可。 </p>
+<p>原来是这个样子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: &#x2F; ||home</span><br><span class="line">  #about: &#x2F;about&#x2F; || user</span><br><span class="line">  #tags: &#x2F;tags&#x2F; ||tags</span><br><span class="line">  #categories: &#x2F;categories&#x2F; || th</span><br><span class="line">  archives: &#x2F;archives&#x2F; || archive</span><br><span class="line">  #schedule: &#x2F;schedule&#x2F; || calendar</span><br><span class="line">  #sitemap: &#x2F;sitemap.xml || sitemap</span><br><span class="line">  #commonweal: &#x2F;404&#x2F; || heartbeat</span><br></pre></td></tr></table></figure>
+
+<p>改成下面这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: &#x2F;||home</span><br><span class="line">  #about: &#x2F;about&#x2F;||user</span><br><span class="line">  #tags: &#x2F;tags&#x2F;||tags</span><br><span class="line">  #categories: &#x2F;categories&#x2F;||th</span><br><span class="line">  archives: &#x2F;archives&#x2F;||archive</span><br><span class="line">  #schedule: &#x2F;schedule&#x2F;||calendar</span><br><span class="line">  #sitemap: &#x2F;sitemap.xml||sitemap</span><br><span class="line">  #commonweal: &#x2F;404&#x2F;||heartbeat</span><br></pre></td></tr></table></figure>
+
+<p>这个bug奇怪的点在于这个空格是next主题文件配置里面自带的，而且我上一次配置的时候没有出现这样的问题。 </p>
+<p>解决方案来自：hexo中next主题下创建标签问题 Cannot GET /tags/%20/：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fwww.zhihu.com%2Fquestion%2F353097489" target="_blank" rel="noopener">https://www.zhihu.com/question/353097489</a></p>
+<h3 id="问题2-给文章设置了标签但是点击标签链接仍无法显示-找不到相关index-html"><a href="#问题2-给文章设置了标签但是点击标签链接仍无法显示-找不到相关index-html" class="headerlink" title="问题2 给文章设置了标签但是点击标签链接仍无法显示 找不到相关index.html"></a>问题2 给文章设置了标签但是点击标签链接仍无法显示 找不到相关index.html</h3><p>参考链接解决方案：</p>
+<p><a href="https://segmentfault.com/q/1010000004441638" target="_blank" rel="noopener">hexo中为什么创建了tags页面却没有生成相应的标签文件夹？</a></p>
+<p><a href="https://www.jianshu.com/p/e17711e44e00" target="_blank" rel="noopener">Hexo使用攻略-添加分类及标签</a></p>
+<p>我们本次遇到的情况是 tags 和categories 没有找到index.html 经过查阅资料知道这个index需要我们手动去生成 步骤如下</p>
+<p>打开命令行，进入博客所在文件夹。执行命令</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
+
+<p>成功后会提示：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO  Created: ~/Documents/blog/source/tags/index.<span class="built_in">md</span></span><br></pre></td></tr></table></figure>
+
+<p>根据上面的路径，找到<code>index.md</code>这个文件，打开后默认内容是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2017-05-27 14:22:08</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>添加<code>type: &quot;tags&quot;</code>到内容中，添加后是这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章分类</span><br><span class="line">date: 2017-05-27 13:47:40</span><br><span class="line">type: "tags"</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>保存并关闭文件。</p>
+<p>categories 的做法类似</p>
+<h3 id="问题3-在主题-config-yml文件中-修改了highlight-theme-导致博客页面样式加载不出来"><a href="#问题3-在主题-config-yml文件中-修改了highlight-theme-导致博客页面样式加载不出来" class="headerlink" title="问题3 在主题 config.yml文件中 修改了highlight_theme 导致博客页面样式加载不出来"></a>问题3 在主题 config.yml文件中 修改了highlight_theme 导致博客页面样式加载不出来</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># post_code</span></span><br><span class="line"><span class="comment"># highlight_theme: normal | night | night blue | night bright | night eighties</span></span><br><span class="line"><span class="attr">highlight_theme:</span> <span class="string">night</span> <span class="string">bright</span></span><br><span class="line"><span class="attr">code_copy:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>果然配置文件出错，night bright 应该是加引号， 修改后问题解决。</p>
+<div class="note danger"><p>​    不要将config.yml文件中的空格乱删 </p>
+<p>​    设置参数时 注意引号</p></div>
       
     </div>
     
@@ -313,6 +387,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+        </div>
+      
 
       
       
@@ -322,8 +402,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/07/text1/" rel="next" title="text112">
-                <i class="fa fa-chevron-left"></i> text112
+              <a href="/2020/03/07/text1/" rel="next" title="Hexo的安装">
+                <i class="fa fa-chevron-left"></i> Hexo的安装
               </a>
             
           </div>
@@ -331,6 +411,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/07/text3/" rel="prev" title="网址导航">
+                网址导航 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -382,8 +466,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -396,9 +489,9 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/%20%7C%7C%20archive">
+                <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -408,10 +501,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                
-                  <span class="site-state-item-count">1</span>
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
-                
+                </a>
               </div>
             
 
@@ -419,10 +512,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">1</span>
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
-                
+                </a>
               </div>
             
 
@@ -443,6 +536,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题1-路径中出现-20-从而导致访问不到文件"><span class="nav-number">1.</span> <span class="nav-text">问题1 路径中出现&#x2F;%20&#x2F;  从而导致访问不到文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题2-给文章设置了标签但是点击标签链接仍无法显示-找不到相关index-html"><span class="nav-number">2.</span> <span class="nav-text">问题2 给文章设置了标签但是点击标签链接仍无法显示 找不到相关index.html</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题3-在主题-config-yml文件中-修改了highlight-theme-导致博客页面样式加载不出来"><span class="nav-number">3.</span> <span class="nav-text">问题3 在主题 config.yml文件中 修改了highlight_theme 导致博客页面样式加载不出来</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
