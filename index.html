@@ -250,6 +250,510 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/14/Linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TomBeiJing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TomBeiJing的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/01/14/Linux/" itemprop="url">Linux</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-14T22:39:26+08:00">
+                2021-01-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h3 id="Linux-账号管理"><a href="#Linux-账号管理" class="headerlink" title="Linux 账号管理"></a>Linux 账号管理</h3><p>创建用户:useradd      (选项)用户名</p>
+<p>用户口令:passwd      (选项)用户名</p>
+<p>修改口令:usermod    (选项)用户名</p>
+<p>删除口令:userdel       (选项)用户名</p>
+<h3 id="linux-–用户组"><a href="#linux-–用户组" class="headerlink" title="linux –用户组"></a>linux –用户组</h3><p>创建用户组:          groupadd(选项)用户组名</p>
+<p>修改用户组:          groupmod(选项)用户组名</p>
+<p>查询用户所属组:          groups(选项)用户组名</p>
+<p>删除用户组:          groupdel(选项)用户组名</p>
+<h3 id="管理用户组内部成员"><a href="#管理用户组内部成员" class="headerlink" title="管理用户组内部成员"></a>管理用户组内部成员</h3><p>语法: gpasswd(可选项)组名</p>
+<ul>
+<li>-a:添加用户到组</li>
+<li>-d:从组删除用户</li>
+<li>-A:指定管理员</li>
+<li>-M:指定组员成员和-A的用途差不多</li>
+<li>-r:删除密码</li>
+</ul>
+<h3 id="日期管理"><a href="#日期管理" class="headerlink" title="日期管理"></a>日期管理</h3><p>date[参数选项]</p>
+<p>参数选项:</p>
+<ul>
+<li>-d&lt;字符串&gt;:显示字符串所指的日期与时间.字符串前后必须加上双引号</li>
+<li>-s&lt;字符串&gt;:显示字符串来设置日期与时间.字符串前后必须加上双引号</li>
+<li>-u:显示GMT</li>
+<li>–help:在线帮助</li>
+<li>–version:显示版本信息</li>
+</ul>
+<h3 id="显示用户"><a href="#显示用户" class="headerlink" title="显示用户"></a>显示用户</h3><p>logname[–help][–version]    显示登陆账号的信息</p>
+<p>参数选项:</p>
+<ul>
+<li>–help 在线帮助</li>
+<li>–version  显示版本信息</li>
+</ul>
+<p>切换用户</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su [-fmp][-c command][-s shell][--help][--version][-] [USER] [ARG]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>-f 或 –fast 不必读启动档(如csh.cshrc等),仅用于csh或tcsh</p>
+</li>
+<li><p>-m -p或–preserve-environment执行su时不改变环境变数</p>
+</li>
+<li><p>-c command或–command=command</p>
+<p>切换哟用户执行命令,执行完毕之后再变回来的使用者</p>
+</li>
+<li><p>-s shell 或–shell=shell 指定要执行的shell(bash csh tcsh等)</p>
+</li>
+</ul>
+<p>预设值为/etc/passwd内的该使用者(USER)shell</p>
+<ul>
+<li>–help显示说明文件</li>
+<li>–version显示版本资讯</li>
+<li>–I 或–login这个参数参加了之后,就好像是重新login为使用者一样,大部分环境变数(HOME SHELL USER 等)收拾以该使用者(USER)为主,并且工作目录也会改变,如果没有指定USER,内定是root</li>
+<li>USER要更变的用户账号</li>
+<li>ARG传入新的shell参数</li>
+</ul>
+<h3 id="id命令"><a href="#id命令" class="headerlink" title="id命令"></a>id命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id [-g][--help][--verison][用户组] 查看当前用户的详细信息(用户id,群组id.所属组)</span><br></pre></td></tr></table></figure>
+
+<h3 id="sudo命令"><a href="#sudo命令" class="headerlink" title="sudo命令"></a>sudo命令</h3><p>sudo[参数选项]     提高普通用户的操作权限</p>
+<p>top命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">top [-] [d delay][q] [c][S][s] [i][n] [b]实时显示process的动态</span><br></pre></td></tr></table></figure>
+
+<p>参数选项:</p>
+<ul>
+<li>.-d:改变显示的更新速度，或是在交谈式指令列( interactive command)按s</li>
+<li>-q:没有任何延迟的显示速度，如果使用者是有superuser的权限，则top将会以最高的优先序执行</li>
+<li>-C:切换显示模式，共有两种模式，一是只显示执行档的名称，另一种是显示完整的路径与名称<br>传智播客和描式会将己完成咸消失的子行程(dead child process)的 CPU time累积起来</li>
+<li>-s∶安全模式，将交谈式指令取消,避免潜在的危机</li>
+<li>-i:不显示任何闲置(idle)或无用(zombie)的行程</li>
+<li>-n :更新的次数，完成后将会退出top</li>
+<li>-b:批次档模式，搭配”n”参数一起使用，可以用来将top的结果输出到档案内</li>
+</ul>
+<h3 id="top命令-掌握"><a href="#top命令-掌握" class="headerlink" title="top命令(掌握)"></a>top命令(掌握)</h3><p><font size="3" color="red">top</font>                     实时显示所有的进程信息<br><font size="3" color="red">top -c</font>                 实现显示所有的进程信息（显示完整命令)<br><font size="3" color="red">top -p PID</font>         实时显示指定进程的信息<br>结束监控快捷键:<font size="3" color="red"><strong>q</strong></font></p>
+<h3 id="ps命令"><a href="#ps命令" class="headerlink" title="ps命令"></a>ps命令</h3><p><font size="3" color="red"><strong>ps</strong></font>  显示当前正在运行的进行信息</p>
+<p><font size="3" color="red"><strong>ps -A</strong></font>  显示当前系统中所有的进程信息</p>
+<h4 id="ps-ef-显示当前系统中所有的进程信息"><a href="#ps-ef-显示当前系统中所有的进程信息" class="headerlink" title="ps -ef   显示当前系统中所有的进程信息"></a><font size="3" color="red"><strong>ps -ef</strong></font>   显示当前系统中所有的进程信息</h4><p><font size="3" color="red"><strong>ps -u 用户名</strong></font>  显示指定用户的进行信息</p>
+<h3 id="kill命令"><a href="#kill命令" class="headerlink" title="kill命令"></a>kill命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kill [-s &lt;信息名称或编号&gt;][程序]  终端执行中的程序</span><br><span class="line">kill [-l &lt;信息编号&gt;]</span><br></pre></td></tr></table></figure>
+
+<p>参数选项</p>
+<ul>
+<li>-l&lt;信息编号&gt;:若不加信息编号选项,则-l参数会列出全部的信息名称</li>
+<li>慧姐加程序的PID或者PGID,也是可以是工作编号</li>
+<li>-u 用户名:杀死这个用户中所有进程</li>
+</ul>
+<p>举例:</p>
+<p>杀死进程 <font size="3" color="red"><strong>kill 1111</strong></font></p>
+<p>杀死进程 <font size="3" color="red"><strong>kill -编号1111</strong></font></p>
+<p><font size="3" color="red"><strong>kill 进程PID</strong></font>                                 杀死指定进程</p>
+<p><font size="3" color="red"><strong>kill -9 进程PID</strong></font>                             彻底杀死指定进程</p>
+<p><font size="3" color="red"><strong>kill -9 $(ps -ef|grep用户名)</strong></font>      杀死指定用户所有进程</p>
+<p><font size="3" color="red"><strong>killall -u 用户名</strong></font>                           杀死指定用户所有进程</p>
+<h3 id="关机命令-掌握"><a href="#关机命令-掌握" class="headerlink" title="关机命令(掌握)"></a>关机命令(掌握)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shutdown [-t seconds] [-rkhncfF] time [message]    关机</span><br></pre></td></tr></table></figure>
+
+<p>参数选项∶</p>
+<ul>
+<li>-t seconds:设定在几秒钟之后进行关机程序。</li>
+<li>-k:并不会真的关机，只是将警告讯息传送给所有使用者。</li>
+<li>-r:关机后重新开机。</li>
+<li>-h :关机后停机。</li>
+<li>-n:不采用正常程序来关机，用强迫的方式杀掉所有执行中的程序后自行关机.</li>
+<li>-c:取消目前已经进行中的关机动作。</li>
+<li>-f:关机时，不做fcsk动作(检查Linux档系统)。-F:关机时，强迫进行fsck动作。</li>
+<li>time:设定关机的时间。</li>
+</ul>
+<ul>
+<li>message:传送给所有使用者的警告讯息。</li>
+</ul>
+<h3 id="who命令"><a href="#who命令" class="headerlink" title="who命令"></a>who命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">who - [husfV][user]                       显示当前登录系统的用户</span><br></pre></td></tr></table></figure>
+
+<p>参数选项:</p>
+<ul>
+<li>-H:显示标题信息</li>
+<li>-u:显示闲置时间，如果一份之后有操作，则显示点，如果超过24小时无操作，则显示old字符串</li>
+<li>-q:只显示登入系统的账号名称和总人数</li>
+<li>-s∶次参数将忽略不予处理，仅负责解决who指令其版本的兼容性问题</li>
+<li>-w∶显示用户的信息状态栏</li>
+<li>–help:在线帮助</li>
+<li>–version :显示版本信息</li>
+</ul>
+<p><font size="3" color="red"><strong>who</strong></font>                   显示当前登录系统的用户</p>
+<p><font size="3" color="red"><strong>who-H</strong></font>               显示明细(标题)信息</p>
+<h3 id="timedetectl命令-掌握"><a href="#timedetectl命令-掌握" class="headerlink" title="timedetectl命令(掌握)"></a>timedetectl命令(掌握)</h3><p>timedetectl                                矫正服务器时间,时区</p>
+<p><font size="3" color="red"><strong>timedatectl status</strong></font>                                                        显示系统的当前时间和日期</p>
+<p><font size="3" color="red"><strong>timedatectl list-timezones</strong></font>                                         查看所有可用的时区</p>
+<p><font size="3" color="red"><strong>timedatectl set-timezone “Asia/Shanghai”</strong></font>            设置本地时区<br><font size="3" color="red"><strong>timedatectl set-ntp false</strong></font>                                            禁用时间同步<br><font size="3" color="red"><strong>timedatectl set-time “2019-03-11 20:45:00 ”</strong></font>            设置时间<br><font size="3" color="red"><strong>timedatectl set-ntp true</strong></font>                                                启用时间同步</p>
+<h3 id="clear命令-掌握"><a href="#clear命令-掌握" class="headerlink" title="clear命令(掌握)"></a>clear命令(掌握)</h3><p>clear                                             清楚屏幕</p>
+<h2 id="目录常用命令"><a href="#目录常用命令" class="headerlink" title="目录常用命令"></a>目录常用命令</h2><table>
+<thead>
+<tr>
+<th>常见命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ls</td>
+<td>列出目录</td>
+</tr>
+<tr>
+<td>cd</td>
+<td>切换目录</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>显示目录的目录</td>
+</tr>
+<tr>
+<td>mkdir</td>
+<td>创建新目录</td>
+</tr>
+<tr>
+<td>rmdir</td>
+<td>删除空目录</td>
+</tr>
+<tr>
+<td>cp</td>
+<td>复制文件或目录</td>
+</tr>
+<tr>
+<td>rm</td>
+<td>删除文件或目录</td>
+</tr>
+<tr>
+<td>mv</td>
+<td>移动文件或目录<br />修改文件或者目录的名字</td>
+</tr>
+</tbody></table>
+<h3 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h3><p>语法:ls [参数选项]目录名称           列出目录里的内容</p>
+<p><font size="3" color="red"><strong>ls</strong></font>            显示不隐藏的文件与文件夹</p>
+<p><font size="3" color="red"><strong>ls -l</strong></font>         显示不隐藏的文件与文件夹的详细信息</p>
+<p><font size="3" color="red"><strong>ls -al</strong></font>       显示所有文件与文件夹的详细信息</p>
+<h3 id="pwd命令"><a href="#pwd命令" class="headerlink" title="pwd命令"></a>pwd命令</h3><p><font size="3" color="red"><strong>pwd-P</strong></font>                    查看当前所在目录</p>
+<h3 id="cd命令"><a href="#cd命令" class="headerlink" title="cd命令"></a>cd命令</h3><p>语法:cd[相对路径或绝对路径]                切换目录</p>
+<p>选项参数:</p>
+<ul>
+<li>相对路径:相对当前目录而言的.</li>
+<li>相对路径:由根目录/开始的</li>
+<li>cd ~ 快速回到root目录</li>
+<li>de / 快速回到根目录</li>
+</ul>
+<h3 id="mkdir命令"><a href="#mkdir命令" class="headerlink" title="mkdir命令"></a>mkdir命令</h3><p>语法:mkdir[-p]文件夹的文字                  创建目录</p>
+<p><font size="3" color="red"><strong>mkdir文件夹名</strong></font>                                          创建目录</p>
+<p>mkdir -p aaa/bbb                                   创建多级目录      </p>
+<h3 id="rmdir命令"><a href="#rmdir命令" class="headerlink" title="rmdir命令"></a>rmdir命令</h3><p>语法:rmdir[-p] 文件夹名字                        删除空的目录</p>
+<p><font size="3" color="red"><strong>rmdir文件夹名</strong></font>                                          删除目录</p>
+<p><font size="3" color="red"><strong>rmdir -p bbb/ccc</strong></font>                                      删除ccc,如果删完之后bbb是空的,bbb也一起删除</p>
+<h3 id="rm命令"><a href="#rm命令" class="headerlink" title="rm命令"></a>rm命令</h3><p>语法:rm [选项]  文件/目录                    删除文件或者目录</p>
+<p><font size="3" color="red">*<em>rm 文件路径 *</em></font>                                        删除文件</p>
+<p><font size="3" color="red"><strong>rm-r 目录路径</strong></font>                                        删除路径和目录里面所有的内容</p>
+<h3 id="cp命令"><a href="#cp命令" class="headerlink" title="cp命令"></a>cp命令</h3><p>语法:cp[选项]  数据源 目的地               文件复制</p>
+<p><font size="3" color="red"><strong>cp aaa/a.txt ccc</strong></font>                        将aaa文件夹中的a.txt文件拷贝到ccc文件夹中</p>
+<p><font size="3" color="red"><strong>cp -r  aaa/*ccc</strong></font>                             将aaa文件夹中所有内容拷贝到ccc文件夹中</p>
+<h3 id="mv命令"><a href="#mv命令" class="headerlink" title="mv命令"></a>mv命令</h3><p>语法:mv[选项]数据源  目的地                改名 ,移动</p>
+<p><font size="3" color="red"><strong>mv 数据源 目的地</strong></font>                                    改名,移动</p>
+<table>
+<thead>
+<tr>
+<th>命令格式</th>
+<th>运行结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>mv 文件名   文件名</td>
+<td>将源文件名改为目标文件名</td>
+</tr>
+<tr>
+<td>mv 文件名   目录名</td>
+<td>将文件移动到目标目录</td>
+</tr>
+<tr>
+<td>mv 目录名   目录名</td>
+<td>目标目录已存在,将源目录移动到目标目录;目标目录不存在则改名</td>
+</tr>
+<tr>
+<td>mv 目录名  文件名</td>
+<td>出错</td>
+</tr>
+</tbody></table>
+<h3 id="文件基本属性"><a href="#文件基本属性" class="headerlink" title="文件基本属性"></a>文件基本属性</h3><p><img src="C:%5CUsers%5Czhouqi%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1610120062603.png" alt="1610120062603"></p>
+<h3 id="chgrp命令"><a href="#chgrp命令" class="headerlink" title="chgrp命令"></a>chgrp命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">语法:chgrp [选项参数][所属群组][文件或目录...]				更改属组</span><br><span class="line">chgrp[选项参数][--reference&#x3D;&lt;参考文件或目录&gt;][--version][文件或目录...]</span><br></pre></td></tr></table></figure>
+
+<p><font size="3" color="red"><strong>chgrp -v root aaa</strong></font>                              将aaa的属组改为root</p>
+<h3 id="chown命令"><a href="#chown命令" class="headerlink" title="chown命令"></a>chown命令</h3><p>语法:chown属主名文件名                                                    <font size="3" color="red"><strong>更改属主</strong></font><br>        chown[参数选项]属主名:属组名文件名                      <font size="3" color="red"><strong>更改属主和属组</strong></font></p>
+<p>选项参数:</p>
+<ul>
+<li><p>-R    处理指定目录以及其子目录下的所有文件</p>
+<p><font size="3" color="red"><strong>chown root aaa</strong></font>                                      将aaa的属主改为root</p>
+<p><font size="3" color="red"><strong>chown root:root bbb</strong></font>                            将bbb的属主和属组改为root</p>
+<p><font size="3" color="red"><strong>chown -R root:root aaa</strong></font>                      将aaa文件夹和里面所有的属主和属组改为root</p>
+</li>
+</ul>
+<h3 id="chmod权限命令"><a href="#chmod权限命令" class="headerlink" title="chmod权限命令"></a>chmod权限命令</h3><p>作用:修改属主、属组、其他用户的权限<br>修改方式:</p>
+<ul>
+<li>数字方式</li>
+<li>符号方式</li>
+</ul>
+<h4 id="数字权限"><a href="#数字权限" class="headerlink" title="数字权限"></a>数字权限</h4><p>语法:chmod[参数选项]数字权限文件或目录</p>
+<h5 id="参数选项"><a href="#参数选项" class="headerlink" title="参数选项:"></a>参数选项:</h5><ul>
+<li>-c∶若该档案权限确实已经更改，才显示其更改动作</li>
+<li>-f:若该档案权限无法被更改也不要显示错误讯息</li>
+<li>-v:显示权限变更的详细资料</li>
+<li>-R:对目前目录下的所有档案与子目录进行相同的权限变更(即以递回的方式逐个变更)</li>
+<li>–help:显示辅助说明</li>
+<li>–version:显示版本</li>
+<li><font size="3" color="red"><strong>数字权限</strong></font>:就是刚刚提到的数字类型的权限属性，为rwx对应数值相加的和。</li>
+</ul>
+<h5 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h5><p><font size="3" color="red"><strong>chmod-R     770      aaa</strong></font></p>
+<p><font size="3" color="red"><strong>chmod-R     符号权限      aaa</strong></font></p>
+<h5 id="符号权限"><a href="#符号权限" class="headerlink" title="符号权限"></a>符号权限</h5><ul>
+<li>user 属主权限      ———u</li>
+<li>group 属主权限      ———g</li>
+<li>others 属主权限      ———o</li>
+<li>全部身份      ———a</li>
+</ul>
+<p><img src="C:%5CUsers%5Czhouqi%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1610121071551.png" alt="1610121071551"></p>
+<h3 id="touch命令"><a href="#touch命令" class="headerlink" title="touch命令"></a>touch命令</h3><p>语法:touch[参数选项]文件名                  <font size="3" color="red"><strong>如果文件不存在就创建文件如果存在就修改时间属性</strong></font></p>
+<p><font size="3" color="red"><strong>touch a.txt</strong></font><br>不存在就创建，存在就修改时间属性</p>
+<p><font size="3" color="red"><strong>touch a{1..10},.txt</strong></font></p>
+<p>批量创建空文件</p>
+<p><font size="3" color="red"><strong>stat a.txt</strong></font></p>
+<p>查看文件的详细信息</p>
+<h3 id="vi-vim编辑器"><a href="#vi-vim编辑器" class="headerlink" title="vi/vim编辑器"></a>vi/vim编辑器</h3><p>vi:</p>
+<ul>
+<li>只能是编辑文本内容,不能对字体段落进行排版</li>
+<li>不支持鼠标操作</li>
+<li>没有菜单</li>
+<li>只有命令</li>
+</ul>
+<h4 id="进入编辑模式"><a href="#进入编辑模式" class="headerlink" title="进入编辑模式"></a>进入编辑模式</h4><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>英文</th>
+<th></th>
+<th>常用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>i</td>
+<td>insert</td>
+<td>在当前字符前出入文本</td>
+<td>常用</td>
+</tr>
+<tr>
+<td>I</td>
+<td>insert</td>
+<td>在行首先入文本</td>
+<td>较常用</td>
+</tr>
+<tr>
+<td>a</td>
+<td>append</td>
+<td>在当前字符后添加文本</td>
+<td></td>
+</tr>
+<tr>
+<td>A</td>
+<td>append</td>
+<td>在行未添加文本</td>
+<td>较常用</td>
+</tr>
+<tr>
+<td>o</td>
+<td></td>
+<td>在当前行后面插入一空行</td>
+<td>常用</td>
+</tr>
+<tr>
+<td>O</td>
+<td></td>
+<td>在当前行前面插入一空行</td>
+<td>常用</td>
+</tr>
+</tbody></table>
+<h4 id="进入末行模式保存文件"><a href="#进入末行模式保存文件" class="headerlink" title="进入末行模式保存文件"></a>进入末行模式保存文件</h4><p>语法∶</p>
+<ul>
+<li>:q     当vim进入文件没有对文件内容做任何操作可以按”q”退出</li>
+<li>:q!    当vim进入文件对文件内容有操作但不想保存退出</li>
+<li>:wq   正常保存退出</li>
+<li>:wq!  强行保存退出，只针对与root用户或文件所有人</li>
+</ul>
+<p><img src="C:%5CUsers%5Czhouqi%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1610121741035.png" alt="1610121741035"></p>
+<h3 id="cat命令"><a href="#cat命令" class="headerlink" title="cat命令"></a>cat命令</h3><p><font size="3" color="red"><strong>cat a.txt</strong></font>                       查看a.txt的内容</p>
+<p><font size="3" color="red"><strong>cat -n a.txt</strong></font>                    查看a.txt的内容(加入行号)</p>
+<h3 id="less命令"><a href="#less命令" class="headerlink" title="less命令"></a>less命令</h3><p><font size="3" color="red"><strong>less  a.txt</strong></font>         查看a.txt的内容</p>
+<p><font size="3" color="red"><strong>less -N a.txt</strong></font>    查看a.txt的内容(加入行号)</p>
+<h3 id="tail命令"><a href="#tail命令" class="headerlink" title="tail命令"></a>tail命令</h3><p>语法:tail [参数选项]文件       查看文件的最后部分</p>
+<h5 id="参数选项∶"><a href="#参数选项∶" class="headerlink" title="参数选项∶"></a>参数选项∶</h5><ul>
+<li>-数字:显示文件的最后几行</li>
+<li>-f :循环读取文档最后10行</li>
+<li>-n&lt;行数&gt;:显示文件的内容，从指定行至文件末尾</li>
+<li>-c∶显示最后指定的字节数</li>
+</ul>
+<h4 id="tail命令-1"><a href="#tail命令-1" class="headerlink" title="tail命令"></a>tail命令</h4><p><font size="3" color="red"><strong>tail-3 big.txt</strong></font>                                        显示文件最后3行</p>
+<p><font size="3" color="red"><strong>tail -fbig.txt</strong></font>                                        动态显示最后10行</p>
+<p><font size="3" color="red"><strong>tail -4f big.txt</strong></font>                                      动态显示最后4行</p>
+<p><font size="3" color="red"><strong>tail -n +2 big.txt</strong></font>                                显示文件a.txt的内容，从第2行至文件末尾<br><font size="3" color="red"><strong>tail -c 45 big.txt</strong></font>                                显示最后一些字符</p>
+<h4 id="head命令"><a href="#head命令" class="headerlink" title="head命令"></a>head命令</h4><p>语法:head[参数选项]文件             查看文件的前一部分<br>跟tail命令是类似的，大家可以自行尝试一下。</p>
+<h3 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h3><p>语法:grep[参数选项]关键字文件        根据关键词,搜索文本文件内容</p>
+<h5 id="参数选项-1"><a href="#参数选项-1" class="headerlink" title="参数选项:"></a>参数选项:</h5><ul>
+<li>-n :把包含关键字的行展示出来</li>
+<li>-i:把包含关键字的行展示出来，搜索时，忽略大小写。</li>
+<li>-v:把<font size="3" color="red"><strong>不</strong></font>包含关键字的行展示出来</li>
+</ul>
+<h3 id="grep命令-1"><a href="#grep命令-1" class="headerlink" title="grep命令"></a>grep命令</h3><p><font size="3" color="red"><strong>grep关键字small.txt</strong></font><br>把包含关键字的行展示出来<br><font size="3" color="red"><strong>grep-n关键字small.txt</strong></font><br>把包含关键字的行展示出来且加上行号<br><font size="3" color="red"><strong>grep-i关键字small.txt</strong></font><br>把包含关键字的行展示出来，搜索时忽略大小写<br><font size="3" color="red"><strong>grep-v关键字small.txt</strong></font><br>把不包含关键字的行展示出来<br><font size="3" color="red"><strong>ps -ef | grep 关键字</strong></font><br>查找指定的进程信息，包含grep进程<br><font size="3" color="red"><strong>ps -ef / grep关键字| grep -v “grep”</strong></font><br>查找指定的进程信息，不包含grep进程<br><font size="3" color="red"><strong>ps -eflgrep-c sshd</strong></font><br>查找进程个数</p>
+<h3 id="vim定位行"><a href="#vim定位行" class="headerlink" title="vim定位行"></a>vim定位行</h3><p>语法:vim文件名+行数            查看文件并定位到具体行数</p>
+<h3 id="echo命令"><a href="#echo命令" class="headerlink" title="echo命令"></a>echo命令</h3><p>语法:</p>
+<p>echo字符串                                展示文本<br>echo字符串&gt;文件名                  将字符串写到文件中(覆盖文件中内容)<br>echo字符串&gt;&gt;文件名                将字符串写到文件中（不覆盖文件中内容)<br>cat不存在的目录&amp;&gt;&gt; error.log        将命令的失败结果追加error.log文件的后面</p>
+<h3 id="软连接"><a href="#软连接" class="headerlink" title="软连接"></a>软连接</h3><p>语法︰<br>ln -s            目标文件路径快捷方式路径</p>
+<h3 id="find命令"><a href="#find命令" class="headerlink" title="find命令"></a>find命令</h3><p>语法:find [参数选项]&lt;指定目录&gt;&lt;指定条件&gt;&lt;指定内容&gt;<br>在指定目录下查找文件</p>
+<h3 id="gzip命令"><a href="#gzip命令" class="headerlink" title="gzip命令"></a>gzip命令</h3><p><font size="3" color="red"><strong>gizp a.txt</strong></font>                                压缩文件<br>gzip*                                        压缩当前目录下所有文件<br><font size="3" color="red"><strong>gzip-dv *</strong></font>                                解压文件并列出详细信息</p>
+<p>gunzip命令<br><font size="3" color="red"><strong>gunzip压缩文件</strong></font>                    解压</p>
+<h3 id="tar命令"><a href="#tar命令" class="headerlink" title="tar命令"></a>tar命令</h3><p>语法:tar[必要参数][选择参数][文件]     打包/压缩和解压(文件/文件夹)<br><font size="3" color="red"><strong>注意</strong></font>:tar本身不具有压缩功能。他是<font size="3" color="red"><strong>调用</strong></font>压缩功能实现的。</p>
+<p><font size="3" color="red"><strong>tar -cvf打包文件名文件名</strong></font><br>打包文件并指定打包之后的文件名(仅打包不压缩)<br>心<br><font size="3" color="red"><strong>tar -zcvf压缩文件名文件名/文件夹名</strong></font><br>压缩文件或者文件夹并指定压缩文件名（打包压缩)<br><font size="3" color="red"><strong>tar -ztvf压缩文件名</strong></font><br>查看压缩文件中有哪些文件<br><font size="3" color="red"><strong>tar -zxvf 压缩文件名</strong></font><br>解压</p>
+<h4 id="参数选项-2"><a href="#参数选项-2" class="headerlink" title="参数选项:"></a>参数选项:</h4><ul>
+<li>-c建立新的压缩文件</li>
+<li>-v显示指令执行过程</li>
+<li>-f&lt;备份文件&gt;指定压缩文件</li>
+<li>-z通过gzip指令处理压缩文件。</li>
+<li>-t列出压缩文件中的内容心</li>
+<li>-x表示解压</li>
+</ul>
+<h3 id="zip命令"><a href="#zip命令" class="headerlink" title="zip命令"></a>zip命令</h3><p>语法:zip[必要参数][选择参数][文件]                            压缩<br><font size="3" color="red"><strong>注意</strong></font>:zip是个使用广泛的压缩程序，文件经它压缩后会另外产生具有”<font size="3" color="red"><strong>.zip</strong></font>“扩展名的压缩文件。<br>参数选项∶</p>
+<ul>
+<li><p>-q不显示指令执行过程。</p>
+</li>
+<li><p>-r递归处理，将指定目录下的所有文件和子目录一并处理。 </p>
+<p><font size="3" color="red"><strong>zip -q -r 压缩文件名 文件/文件夹</strong></font>                       压缩</p>
+</li>
+</ul>
+<h3 id="unzip命令"><a href="#unzip命令" class="headerlink" title="unzip命令"></a>unzip命令</h3><p>语法:unzip[必要参数][选择参数][文件]                    解压<br><font size="3" color="red"><strong>注意</strong></font>︰解压”<font size="3" color="red"><strong>.zip</strong></font>“扩展名的压缩文件。<br>参数选项:</p>
+<ul>
+<li>-l显示压缩文件内所包含的文件。</li>
+<li>-d&lt;目录&gt;指定文件解压缩后所要存储的目录。</li>
+</ul>
+<p>unzip命令   </p>
+<p>unzip -l 压缩文件名                        查看这个压缩文件中有多少内容</p>
+<p>unzip -d 指定文件夹压缩文件        解压</p>
+<h3 id="ifconfig命令"><a href="#ifconfig命令" class="headerlink" title="ifconfig命令"></a>ifconfig命令</h3><p><font size="3" color="red"><strong>ifconfig</strong></font><br>显示激活的网卡信息<br><font size="3" color="red"><strong>ifconfig ens37 down</strong></font><br>关闭网卡<br><font size="3" color="red"><strong>ifconfig ens37 up</strong></font><br>启动网卡<br><font size="3" color="red"><strong>ifconfig ens37192.168.23.199</strong></font><br>配置ip地址<br><font size="3" color="red"><strong>ifconfig ens37 192.168.23.133 netmask 255.255.255.0</strong></font><br>配置ip地址和子网掩码</p>
+<h3 id="ping命令"><a href="#ping命令" class="headerlink" title="ping命令"></a>ping命令</h3><p>ping <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a>                          检测是否与百度连通<br>ping-c 2 <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a>                    指定接收包的次数</p>
+<h3 id="netstat命令"><a href="#netstat命令" class="headerlink" title="netstat命令"></a>netstat命令</h3><p>netstat -a                        显示详细的连接状况</p>
+<p>netstat -i                        显示网卡列表</p>
+<h3 id="yum常用命令"><a href="#yum常用命令" class="headerlink" title="yum常用命令:"></a>yum常用命令:</h3><p>1.列出所有可更新的软件清单命令: yum check-update</p>
+<p>⒉.更新所有软件命令:yum update<br>3.仅安装指定的软件命令:yum install <package_name></p>
+<p>4.仅更新指定的软件命令:yum update <package_name><br>5.列出所有可安装的软件清单命令: yum list<br>6.删除软件包命令:yum remove <package_name>7.查找软件包命令: yum search <keyword><br>8.清除缓存命令:<br>yum clean packages:清除缓存目录下的软件包</p>
+<p>yum clean headers:清除缓存目录下的headers<br>yum clean oldheaders:清除缓存目录下l旧的headers<br>yum clean,yum clean all(= yum clean packages;yum clean oldheaders):清除缓存目录下的软件包及日的headers</p>
+<p><font size="3" color="red"><strong>yum-y install tree</strong></font><br>安装tree</p>
+<p><font size="3" color="red"><strong>tree</strong></font><br>执行tree，展示当前目录结构<br><font size="3" color="red"><strong>yum remove tree</strong></font><br>移除tree<br><font size="3" color="red"><strong>yum list tom*</strong></font><br>找出以tom为开头的软件名称</p>
+<p><img src="C:%5CUsers%5Czhouqi%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1610125032363.png" alt="1610125032363"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/08/LearnjQuery02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1026,15 +1530,25 @@
 <p><strong><em>注意仓库的用户名一定要是用户名+github.io的形式！</em></strong></p>
 <p><strong><em>注意仓库的用户名一定要是用户名+github.io的形式！</em></strong></p>
 <p><strong><em>注意仓库的用户名一定要是用户名+github.io的形式！</em></strong></p>
-<p>下面放上我在搭建过程中多 参考的文章</p>
-<p><a href="https://www.jianshu.com/p/1c888a6b8297?utm_source=oschina-app" target="_blank" rel="noopener">hexo——轻量、简易、高逼格的博客</a></p>
+<h3 id="下面放上我在搭建过程中多-参考的文章"><a href="#下面放上我在搭建过程中多-参考的文章" class="headerlink" title="下面放上我在搭建过程中多 参考的文章"></a>下面放上我在搭建过程中多 参考的文章</h3><p><a href="https://www.jianshu.com/p/1c888a6b8297?utm_source=oschina-app" target="_blank" rel="noopener">hexo——轻量、简易、高逼格的博客</a></p>
 <p><a href="https://www.jianshu.com/p/c9295bacd98b" target="_blank" rel="noopener">使用Hexo在GitHub Pages上搭建部署免费的个人博客网站（下：Hexo部署）——最详细全面解读教程（没有之一）</a></p>
 <p><a href="https://www.jianshu.com/p/f9b213097c42" target="_blank" rel="noopener">使用Github搭建Hexo技术博客托管在GitHub Pages上–安装教程</a></p>
 <p><a href="https://www.jianshu.com/p/ea5ac6162a96" target="_blank" rel="noopener">GitPages + Hexo,从0到1搭建个人博客 </a></p>
-<p>其他一些相关链接</p>
-<p><a href="https://www.zhihu.com/question/24422335" target="_blank" rel="noopener">有哪些好看的 Hexo 主题？</a></p>
+<h3 id="其他一些相关链接"><a href="#其他一些相关链接" class="headerlink" title="其他一些相关链接"></a>其他一些相关链接</h3><p><a href="https://www.zhihu.com/question/24422335" target="_blank" rel="noopener">有哪些好看的 Hexo 主题？</a></p>
 <p><a href="https://gitee.com/help/articles/4136#article-header3" target="_blank" rel="noopener">已经有 Pages 仓库如何部署到 Gitee 的 Pages</a></p>
 <p><a href="https://gitee.com/help/articles/4284#article-header0" target="_blank" rel="noopener">GitHub仓库快速导入Gitee及同步更新</a></p>
+<h3 id="一些常见bug"><a href="#一些常见bug" class="headerlink" title="一些常见bug"></a>一些常见bug</h3><p><a href="https://iqiqiya.com/posts/df32273d.html" target="_blank" rel="noopener">解决NexT主题点击日志报错archives/%7C%7C%20archive</a></p>
+<p>解决办法：</p>
+<p>编辑hexo主题目录下/layout/_macro/sidebar.swig</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /Users/iqiqiya/blog/themes/next/layout/_macro/sidebar.swig</span><br></pre></td></tr></table></figure>
+
+<p>注释掉</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;&#123;&#123; url_for(theme.menu.archives).split(&#39;||&#39;)[0] | trim &#125;&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>并添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;&#123;&#123;url_for(theme.menu.archives.split(&#39;||&#39;)[0])| trim&#125;&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>出处:<a href="https://iqiqiya.com/posts/df32273d.html" target="_blank" rel="noopener">https://iqiqiya.com/posts/df32273d.html</a></p>
 
           
         
@@ -1270,7 +1784,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
