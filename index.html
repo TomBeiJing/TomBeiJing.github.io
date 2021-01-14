@@ -250,6 +250,152 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/08/LearnjQuery02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TomBeiJing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TomBeiJing的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/08/LearnjQuery02/" itemprop="url">LearnjQuery01-锋利的jQuery</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-08T21:04:18+08:00">
+                2020-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/jQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">jQuery</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="attr（）与prop（）的使用区别"><a href="#attr（）与prop（）的使用区别" class="headerlink" title="attr（）与prop（）的使用区别"></a>attr（）与prop（）的使用区别</h4><p>在之前的jQuery版本中，都是使用attr()来访问对象的属性，比如取一个图片的alt属性，就可以这样做$(‘#img’).attr(‘alt’)；但是在某些时候，比如访问input的disabled属性的时候，会有些问题。在有些浏览器里，只要写了 disabled属性就可以，有些则要写：disabled =”disabled”。所以，从1.6版开始，jQuery提供新的方法prop()来获取这些属性。使用prop()的时候，返回值是标准属性：true/false，比如$(‘#checkbox’).prop(‘disabled’)，不会返回“disabled”或者“”，只会返回 true/false。当然赋值的时候也是如此。这样，便统一了所有操作，无论是从语法上还是语义上。</p>
+<p>那么，哪些属性应该用attr()访问，哪些应该用prop()访问呢？</p>
+<p><strong>第一个原则：只添加属性名称该属性就会生效应该使用prop()；</strong></p>
+<p><strong>第二个原则：只存在true/false的属性应该使用prop()。</strong></p>
+<p>按照官方说明，如果是设置disabled和checked 这些属性，应使用prop()方法，而不是使用attr()方法。所以，在上例中，建议把所有attr()改成prop()。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/07/LearnjQuery01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1122,7 +1268,7 @@
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1181,7 +1327,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
